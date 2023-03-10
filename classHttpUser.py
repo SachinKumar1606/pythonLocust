@@ -8,7 +8,7 @@ class MyResReq(HttpUser):
     @task
     def getUser(self):
         res = self.client.get("/api/users?page=2")
-        assert res.status_code is 200
+        assert res.status_code == 200
         print(res.text)
         print(res.status_code)
         print(res.headers)
@@ -19,6 +19,6 @@ class MyResReq(HttpUser):
         {name: "morpheus", job: "leader"}
         ''')
         print(res.text)
-        assert res.status_code is 201
+        assert res.status_code == 201
         print(res.status_code)
         print(res.headers)
